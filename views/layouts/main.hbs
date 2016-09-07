@@ -1,0 +1,47 @@
+<!doctype html>
+<meta charset='utf-8'>
+<title>{{title}}</title>
+
+<link href='/style.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i|Harmattan' rel='stylesheet'>
+
+<nav>
+  <a href='/'>alex.bates.is</a>
+
+  {{#if sub}}
+    <a href='../'>{{sub}}</a>
+  {{/if}}
+</nav>
+
+<main>
+  {{{body}}}
+</main>
+
+<footer {{#if isLanding}}class='landing'{{/if}}>
+  <p>
+    <img src='/this-thing.jpg'>
+
+    <span class='dim'>
+      <a class='dim' href='/'>alex.bates.is</a>
+      a
+      <a class='dim' href='http://www.urbandictionary.com/define.php?term=Human&defid=2941929'>human being</a>
+      living on
+      <a class='dim' href='http://www.urbandictionary.com/define.php?term=earth&defid=65398'>earth</a>.
+    </span>
+
+    <br>
+
+    he's a student &amp; designs and develops websites.
+
+    <br>
+
+    say hi
+    <a href='https://twitter.com/aIexbates' class='twitter'>on twitter</a>,
+    <a href='https://github.com/nanalan' class='github'>on github</a>,
+    <a href='https://scratch.mit.edu/users/nanalan' class='scratch'>on scratch</a> or
+    <a href='mailto:16batesa@gmail.com'>by email</a>.
+  </p>
+</footer>
+
+<div class='overlay'></div>
+<script src='/script.js'></script>
