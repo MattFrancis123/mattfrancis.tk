@@ -57,9 +57,10 @@ app.get('/writing', (req, res) => {
 app.get('/writing/about/:post', (req, res) => {
   try {
     let post = fs.readFileSync(`posts/${req.params.post}.md`, 'utf8')
+    let meta = JSON.parse(fs.readFileSync(`posts/${req.params.post}.json`, 'utf8'))
 
     res.render('post', {
-      title: titleise(req.params.post.replace(/-/g, ' ')),
+      title: meta.title + '- Alex Bates is Writing',
       content: marked(post),
       sub: 'writing',
     })
