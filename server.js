@@ -12,6 +12,8 @@ md.image = (href, title, caption) => `<img src='${href}' alt='${title}'> <span c
 marked.setOptions({
   highlight: code => require('highlight.js').highlightAuto(code).value,
   renderer: md,
+  smartypants: false,
+  sanitize: false,
 })
 
 app.engine('hbs', hbs({
@@ -60,9 +62,12 @@ app.get('/writing/about/:post', (req, res) => {
     let meta = JSON.parse(fs.readFileSync(`posts/${req.params.post}.json`, 'utf8'))
 
     res.render('post', {
-      title: meta.title + '- Alex Bates is Writing',
+      title: meta.title,
       content: marked(post),
       sub: 'writing',
+      url: req.url,
+      identifier: req.params.post,
+      isPost: true
     })
   } catch(e) {
     res.render('404', { title: 'A wild 404 ERROR PAGE appeared!' })

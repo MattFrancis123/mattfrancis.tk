@@ -43,5 +43,24 @@
   </p>
 </footer>
 
+{{#if isPost}}
+  <div id='disqus_thread' class='c'></div>
+
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://alex.bates.is{{url}}";
+      this.page.identifier = "{{identifier}}";
+      this.page.title = "{{title}}";
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = '//alex-is-writing.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+{{/if}}
+
 <div class='overlay'></div>
 <script src='/script.js'></script>

@@ -63,6 +63,8 @@ main {
     max-width 100%
     margin 0 auto
 
+    display block
+
     cursor -webkit-zoom-in
     cursor -moz-zoom-in
 
@@ -275,6 +277,7 @@ footer {
 
   &.visible {
     opacity 0.8
+    pointer-events all
   }
 }
 
@@ -306,4 +309,41 @@ h1 a, h2 a {
       color rgba(white, 0.6)
     }
   }
+}
+
+del, strike {
+  text-decoration none
+  display inline-block
+  position relative
+
+  color #B1B1B1
+
+  &::before {
+    content ''
+    border-bottom 2px solid #B1B1B1
+    width 100%
+
+    position absolute
+    right 0
+    top 50%
+  }
+}
+
+hr {
+  width 90%
+  max-width 300px
+
+  border 0
+  border-top 1px solid #eee
+
+  margin 2em auto
+}
+
+ul {
+  @extend p
+}
+
+#disqus_thread {
+  margin-top -2em
+  margin-bottom 3em
 }
