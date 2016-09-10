@@ -99,6 +99,7 @@ I learnt that you can often do better than somebody tells you to do and you shou
 - ignoring
 - asking questions
 - spending an entire evening (and night) working on the same thing
+- searching stack overflow 'til I found what I wanted
 
 **What limited my learning?**
 - time

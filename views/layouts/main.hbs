@@ -1,5 +1,17 @@
 <!doctype html>
 <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width'>
+{{#if isPost}}
+<meta name='og:title' content='{{title}}'>
+<meta name='og:type' content='article'>
+<meta name='og:author' content='Alex Bates'>
+<meta name='og:url' content='http://alex.bates.is{{url}}'>
+<meta name='og:image' content='{{img}}'>
+<meta name='description' content='{{desc}}'>
+<meta name='og:description' content='{{desc}}'>
+<meta name='og:site_name' content='alex.bates.is/writing'>
+{{/if}}
+
 <title>{{title}}</title>
 
 <link href='/style.css' rel='stylesheet'>

@@ -67,7 +67,9 @@ app.get('/writing/about/:post', (req, res) => {
       sub: 'writing',
       url: req.url,
       identifier: req.params.post,
-      isPost: true
+      isPost: true,
+      desc: meta.subtitle,
+      img: meta.img
     })
   } catch(e) {
     res.render('404', { title: 'A wild 404 ERROR PAGE appeared!' })
