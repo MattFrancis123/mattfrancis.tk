@@ -1,6 +1,6 @@
 <!doctype html>
 <meta charset='utf-8'>
-<meta name='viewport' content='width=device-width'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
 {{#if isPost}}
 <meta name='og:title' content='{{title}}'>
 <meta name='og:type' content='article'>
@@ -15,17 +15,30 @@
 <meta name='twitter:creator' content='@aIexbates'>
 {{/if}}
 
+<link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png'>
+<link rel='icon' type='image/png' href='/favicon-32x32.png' sizes='32x32'>
+<link rel='icon' type='image/png' href='/favicon-16x16.png' sizes='16x16'>
+<link rel='manifest' href='/manifest.json'>
+<link rel='mask-icon' href='/safari-pinned-tab.svg' color='#c3063c'>
+<meta name='apple-mobile-web-app-title' content='alex.bates.is'>
+<meta name='application-name' content='alex.bates.is'>
+<meta name='theme-color' content='#c3063c'>
+
 <title>{{title}}</title>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 
 <link href='/style.css' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i|Harmattan' rel='stylesheet'>
 
 <nav>
-  <a href='/'>alex.bates.is</a>
+  <div class='c'>
+    <a href='/'>alex.bates.is</a>
 
-  {{#if sub}}
-    <a href='../'>{{sub}}</a>
-  {{/if}}
+    {{#if sub}}
+      <a href='../'>{{sub}}</a>
+    {{/if}}
+  </div>
 </nav>
 
 <main>
@@ -34,10 +47,10 @@
 
 <footer {{#if isLanding}}class='landing'{{/if}}>
   <p>
-    <img src='/this-thing.jpg'>
+    <img src='/avatar-square.svg'>
 
     <span class='dim'>
-      <a class='dim' href='/'>alex.bates.is</a>
+      <a href='/'>alex.bates.is</a>
       a
       <a class='dim' href='http://www.urbandictionary.com/define.php?term=Human&defid=2941929'>human being</a>
       living on
@@ -59,9 +72,9 @@
 
   <script>
     var disqus_config = function () {
-      this.page.url = "http://alex.bates.is{{url}}";
-      this.page.identifier = "{{identifier}}";
-      this.page.title = "{{title}}";
+      this.page.url = 'http://alex.bates.is{{url}}';
+      this.page.identifier = '{{identifier}}';
+      this.page.title = '{{title}}';
     };
 
     (function() { // DON'T EDIT BELOW THIS LINE
@@ -73,5 +86,4 @@
   </script>
 {{/if}}
 
-<div class='overlay'></div>
 <script src='/script.js'></script>

@@ -7,7 +7,7 @@ const dir = require('node-dir')
 const titleise = require('titleize')
 
 let md = new marked.Renderer()
-md.image = (href, title, caption) => `<img src='${href}' alt='${title}'> <span class='dim center'>${caption}</span>`
+md.image = (href, title, caption) => `<img src='${href}' alt='${title}' data-action='zoom'>${caption ? `<span class='dim center caption'>${caption}</span>` : ``}`
 
 marked.setOptions({
   highlight: code => require('highlight.js').highlightAuto(code).value,
@@ -27,7 +27,7 @@ app.use(express.static(__dirname + '/assets'))
 
 app.get('/', (req, res) => {
   res.render('landing', {
-    title: 'Alex Bates - A human being living on Earth.',
+    title: 'alex.bates.is',
     isLanding: true,
   })
 })
@@ -52,6 +52,7 @@ app.get('/writing', (req, res) => {
         else return 0
       }),
       sub: 'writing',
+      title: 'alex.bates.is writing'
     })
   })
 })
@@ -62,7 +63,7 @@ app.get('/writing/about/:post', (req, res) => {
     let meta = JSON.parse(fs.readFileSync(`posts/${req.params.post}.json`, 'utf8'))
 
     res.render('post', {
-      title: meta.title,
+      title: 'alex.bates.is writing about '+meta.url.replace(/-/g, ' '),
       content: marked(post),
       sub: 'writing',
       url: req.url,
@@ -72,12 +73,12 @@ app.get('/writing/about/:post', (req, res) => {
       img: meta.img
     })
   } catch(e) {
-    res.render('404', { title: 'A wild 404 ERROR PAGE appeared!' })
+    res.status(404).render('404', { title: 'A wild 404 ERROR PAGE appeared!' })
   }
 })
 
 app.get('*', (req, res) => {
-  res.render('404', { title: 'A wild 404 ERROR PAGE appeared!' })
+  res.status(404).render('404', { title: 'A wild 404 ERROR PAGE appeared!' })
 })
 
-app.listen(4321, () => console.log('listening to the internet for interested persons'))
+app.listen(4321, () => console.log('listening @ http://localhost:4321'))
