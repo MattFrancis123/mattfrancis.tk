@@ -27,12 +27,12 @@ app.use(express.static(__dirname + '/assets'))
 
 app.get('/', (req, res) => {
   res.render('landing', {
-    title: 'alex.bates.is',
+    title: 'Matt Francis',
     isLanding: true,
   })
 })
 
-app.get('/writing', (req, res) => {
+app.get('/blog', (req, res) => {
   let posts = []
 
   dir.readFiles('posts', { match: /.+\.json/ }, (err, metadata, next) => {
@@ -51,21 +51,21 @@ app.get('/writing', (req, res) => {
         if(b.date < a.date) return -1
         else return 0
       }),
-      sub: 'writing',
-      title: 'alex.bates.is writing'
+      sub: 'blog',
+      title: 'Blog - Matt Francis'
     })
   })
 })
 
-app.get('/writing/about/:post', (req, res) => {
+app.get('/blog/:post', (req, res) => {
   try {
     let post = fs.readFileSync(`posts/${req.params.post}.md`, 'utf8')
     let meta = JSON.parse(fs.readFileSync(`posts/${req.params.post}.json`, 'utf8'))
 
     res.render('post', {
-      title: 'alex.bates.is writing about '+meta.url.replace(/-/g, ' '),
+      title: titleise(meta.title + ' - Matt Francis'),
       content: marked(post),
-      sub: 'writing',
+      sub: 'blog',
       url: req.url,
       identifier: req.params.post,
       isPost: true,
@@ -73,12 +73,12 @@ app.get('/writing/about/:post', (req, res) => {
       img: meta.img
     })
   } catch(e) {
-    res.status(404).render('404', { title: 'A wild 404 ERROR PAGE appeared!' })
+    res.status(404).render('404', { title: '404 - Matt Francis' })
   }
 })
 
 app.get('*', (req, res) => {
-  res.status(404).render('404', { title: 'A wild 404 ERROR PAGE appeared!' })
+  res.status(404).render('404', { title: '404 - Matt Francis' })
 })
 
-app.listen(4321, () => console.log('listening @ http://localhost:4321'))
+app.listen(43210, () => console.log('listening @ http://localhost:43210'))
