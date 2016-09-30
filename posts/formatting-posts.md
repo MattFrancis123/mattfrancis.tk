@@ -1,4 +1,6 @@
-*14/09/16*
+# Formatting Posts
+
+## 14/09/16
 
 <table>
   <tr>
