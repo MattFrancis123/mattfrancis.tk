@@ -1,39 +1,23 @@
 <!doctype html>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width,initial-scale=1'>
-{{#if isPost}}
-<meta name='og:title' content='{{title}}'>
-<meta name='og:type' content='article'>
-<meta name='og:author' content='Alex Bates'>
-<meta name='og:url' content='http://alex.bates.is{{url}}'>
-<meta name='og:image' content='{{img}}'>
-<meta name='description' content='{{desc}}'>
-<meta name='og:description' content='{{desc}}'>
-<meta name='og:site_name' content='alex.bates.is/writing'>
-<meta name='twitter:card' content='summary'>
-<meta name='twitter:site' content='@aIexbates'>
-<meta name='twitter:creator' content='@aIexbates'>
-{{/if}}
 
 <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png'>
 <link rel='icon' type='image/png' href='/favicon-32x32.png' sizes='32x32'>
 <link rel='icon' type='image/png' href='/favicon-16x16.png' sizes='16x16'>
 <link rel='manifest' href='/manifest.json'>
-<link rel='mask-icon' href='/safari-pinned-tab.svg' color='#c3063c'>
-<meta name='apple-mobile-web-app-title' content='alex.bates.is'>
-<meta name='application-name' content='alex.bates.is'>
-<meta name='theme-color' content='#c3063c'>
+<link rel='mask-icon' href='/safari-pinned-tab.svg' color='#000000'>
 
 <title>{{title}}</title>
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 
 <link href='/style.css' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i|Harmattan' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,400i,600,600i|Roboto' rel='stylesheet'>
 
 <nav>
   <div class='c'>
-    <a href='/'>alex.bates.is</a>
+    <a href='/'>Matt Francis</a>
 
     {{#if sub}}
       <a href='../'>{{sub}}</a>
@@ -50,40 +34,9 @@
     <img src='/avatar-square.svg'>
 
     <span class='dim'>
-      <a href='/'>alex.bates.is</a>
-      a
-      <a class='dim' href='http://www.urbandictionary.com/define.php?term=Human&defid=2941929'>human being</a>
-      living on
-      <a class='dim' href='http://www.urbandictionary.com/define.php?term=earth&defid=65398'>earth</a>.
+      <b>Matt Francis</b> is a Year 9 student learning to code.
     </span>
-
-    <br>
-
-    say hi
-    <a href='https://twitter.com/aIexbates' class='twitter'>on twitter</a>,
-    <a href='https://github.com/nanalan' class='github'>on github</a>,
-    <a href='https://scratch.mit.edu/users/nanalan' class='scratch'>on scratch</a> or
-    <a href='mailto:16batesa@gmail.com'>by email</a>.
   </p>
 </footer>
-
-{{#if isPost}}
-  <div id='disqus_thread' class='c'></div>
-
-  <script>
-    var disqus_config = function () {
-      this.page.url = 'http://alex.bates.is{{url}}';
-      this.page.identifier = '{{identifier}}';
-      this.page.title = '{{title}}';
-    };
-
-    (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
-      s.src = '//alex-is-writing.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-{{/if}}
 
 <script src='/script.js'></script>
