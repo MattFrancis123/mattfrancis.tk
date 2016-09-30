@@ -1,6 +1,8 @@
+
 ## Colouring
 
 ## 24/09/16
+
 <table>
   <tr>
     <td>Starting point:</td>
